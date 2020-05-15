@@ -8,10 +8,11 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
+import javax.servlet.ServletException;
 import java.io.File;
 
 public class Test {
-    public static void main(String[] args) throws LifecycleException, InterruptedException {
+    public static void main(String[] args) throws LifecycleException, InterruptedException, ServletException {
         Tomcat tomcatServer = new Tomcat();
         tomcatServer.setPort(8080);
         StandardContext ctx = (StandardContext) tomcatServer.addWebapp("/", new File("src/main").getAbsolutePath());
